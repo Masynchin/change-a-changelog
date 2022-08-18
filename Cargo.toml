@@ -1,6 +1,17 @@
 [package]
 name = "change-a-changelog"
 version = "0.1.0"
+authors = ["Max Smirnov <masynchin@gmail.com>"]
+description = """
+change-a-changelog helps you mantain your changelog
+respecting "keep-a-changelog" format.
+"""
+documentation = "https://github.com/Masynchin/change-a-changelog"
+homepage = "https://github.com/Masynchin/change-a-changelog"
+repository = "https://github.com/Masynchin/change-a-changelog"
+keywords = ["changelog", "keep-a-changelog"]
+categories = ["command-line-utilities", "parser-implementations"]
+license = "MIT"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
