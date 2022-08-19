@@ -1,6 +1,6 @@
 use std::{
     fs::File,
-    io::{Result as IoResult, Write, BufWriter},
+    io::{BufWriter, Result as IoResult, Write},
 };
 
 use crate::changelog::Changelog;
