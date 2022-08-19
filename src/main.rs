@@ -1,6 +1,6 @@
-mod app;
+mod cmd;
 
-use app::cmd;
+use cmd::cmd;
 
 fn main() {
     match cmd().get_matches().subcommand() {
