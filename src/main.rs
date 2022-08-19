@@ -1,4 +1,5 @@
 mod app;
+mod changelog;
 mod cmd;
 
 use std::{fs::OpenOptions};
