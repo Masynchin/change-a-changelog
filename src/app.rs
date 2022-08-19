@@ -7,7 +7,7 @@ use crate::changelog::Changelog;
 
 pub fn new(file: File) -> IoResult<()> {
     let mut stream = BufWriter::new(file);
-    stream.write_all(Changelog::new().as_bytes())?;
+    stream.write_all(Changelog::new().as_string().as_bytes())?;
 
     Ok(())
 }
