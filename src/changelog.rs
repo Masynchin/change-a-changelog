@@ -1,16 +1,11 @@
 pub struct Changelog {
-    link: Link,
+    versions: Versions,
 }
 
 impl Changelog {
     pub fn new() -> Self {
         Self {
-            link: Link::new(
-                "Unreleased".into(),
-                "olivierlacan/keep-a-changelog".into(),
-                "0.1.0".into(),
-                "HEAD".into(),
-            ),
+            versions: Versions::new(),
         }
     }
 
@@ -20,16 +15,35 @@ impl Changelog {
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## [Unreleased]\n"
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n"
             .into();
 
         title.push_str("\n");
-        title.push_str(self.link.as_string().as_str());
+        title.push_str(self.versions.as_string().as_str());
         title.push_str("\n");
 
         title
+    }
+}
+
+struct Versions {
+    unreleased: Link,
+}
+
+impl Versions {
+    fn new() -> Self {
+        Self {
+            unreleased: Link::new(
+                "Unreleased".into(),
+                "olivierlacan/keep-a-changelog".into(),
+                "0.1.0".into(),
+                "HEAD".into(),
+            ),
+        }
+    }
+
+    fn as_string(&self) -> String {
+        self.unreleased.as_string()
     }
 }
 
