@@ -1,11 +1,13 @@
 pub struct Changelog {
     versions: Versions,
+    repo: String,
 }
 
 impl Changelog {
-    pub fn new() -> Self {
+    pub fn new(repo: String) -> Self {
         Self {
-            versions: Versions::new(),
+            versions: Versions::new(repo.clone()),
+            repo,
         }
     }
 
@@ -31,14 +33,9 @@ struct Versions {
 }
 
 impl Versions {
-    fn new() -> Self {
+    fn new(repo: String) -> Self {
         Self {
-            unreleased: Link::new(
-                "Unreleased".into(),
-                "olivierlacan/keep-a-changelog".into(),
-                "0.1.0".into(),
-                "HEAD".into(),
-            ),
+            unreleased: Link::new("Unreleased".into(), repo, "0.1.0".into(), "HEAD".into()),
         }
     }
 

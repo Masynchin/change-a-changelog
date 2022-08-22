@@ -18,3 +18,4 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "3.2.17", features = ["cargo", "derive"] }
+git2 = "0.15.0"
