@@ -40,7 +40,11 @@ impl Versions {
     }
 
     fn as_string(&self) -> String {
-        self.unreleased.as_string()
+        format!(
+            "{}\n\n{}",
+            self.unreleased.title(),
+            self.unreleased.as_string()
+        )
     }
 }
 
@@ -59,6 +63,10 @@ impl Link {
             left,
             right,
         }
+    }
+
+    pub fn title(&self) -> String {
+        "[Unreleased]".to_string()
     }
 
     pub fn as_string(&self) -> String {
